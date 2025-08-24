@@ -7820,7 +7820,11 @@
       const unmonitoring = new WeakMap()
 
       elements.forEach(el => {
-        const scrollY = window.scrollY || window.scrollTop || 0
+        const scrollY =
+          window.scrollY ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          0
         const height = window.innerHeight || window.clientHeight || 0
 
         const rect = el.getBoundingClientRect()
