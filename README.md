@@ -1,2 +1,0 @@
-# tungthuong-wedding
-wedding info
