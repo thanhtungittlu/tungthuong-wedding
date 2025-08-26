@@ -551,6 +551,54 @@
   <link rel="stylesheet" href="./assets/animatev4.css" type="text/css">
   <link rel="stylesheet" href="./assets/iconfont.css" as="style" onload="this.onload=null;this.rel='stylesheet';">
   <script src="./assets/inline.js"></script>
+
+  <audio id="background-music" loop>
+    <source src="https://res.cloudinary.com/dcvoqxypw/video/upload/v1756219098/background.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="music-toggle-button"></div>
+
+  <script>
+    window.addEventListener('load', function() {
+      const audio = document.getElementById('background-music');
+      const toggleButton = document.getElementById('music-toggle-button');
+
+      // Cố gắng tự động phát nhạc
+      let playPromise = audio.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Tự động phát thành công
+          toggleButton.classList.add('playing');
+        }).catch(error => {
+          // Tự động phát bị chặn, chờ người dùng tương tác
+          toggleButton.classList.add('paused');
+          // Thêm một sự kiện click vào toàn trang để bắt đầu nhạc lần đầu
+          document.body.addEventListener('click', function playFirstTime() {
+              audio.play();
+              toggleButton.classList.remove('paused');
+              toggleButton.classList.add('playing');
+              // Gỡ bỏ sự kiện này sau lần click đầu tiên
+              document.body.removeEventListener('click', playFirstTime);
+          }, { once: true });
+        });
+      }
+
+      // Xử lý nút bấm bật/tắt
+      toggleButton.addEventListener('click', function() {
+        if (audio.paused) {
+          audio.play();
+          toggleButton.classList.remove('paused');
+          toggleButton.classList.add('playing');
+        } else {
+          audio.pause();
+          toggleButton.classList.remove('playing');
+          toggleButton.classList.add('paused');
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>
