@@ -1411,38 +1411,7 @@ a {
     text-align: center;
     --type: 0;
   }
-
-  #w-f0fwyhbu {
-    width: 50px;
-    height: 50px;
-    z-index: 10;
-    position: fixed;
-    left: calc((100% - 420px)/2 + 20px);
-    bottom: 20px;
-  }
-
-  #w-f0fwyhbu .image-block-css {
-    border-color: rgba(229, 231, 235, 1);
-    border-style: solid;
-    border-width: 0px;
-    position: absolute;
-    z-index: null;
-  }
-
-  #w-f0fwyhbu .image-background {
-    width: 50px;
-    height: 50px;
-    top: 0px;
-    left: 0px;
-    background: center center/ cover no-repeat scroll content-box border-box url("https://content.pancake.vn/1/fwebp/f5/9d/6e/68/68bd732f71085eb122df4674357e52a44ce50cdefc9018e1bfebbf2a-w:200-h:200-l:5929-t:image/png.png");
-    --type: 0;
-  }
-
-  #w-f0fwyhbu .image-background-compare {
-    background: undefined;
-    clip: rect(0, 25px, 50px, 0);
-    --type: 0;
-  }
+  
 
   #w-17tsexjy {
     width: 50px;
@@ -4420,37 +4389,7 @@ a {
     --type: 0;
   }
 
-  #w-f0fwyhbu {
-    width: 50px;
-    height: 50px;
-    z-index: 10;
-    position: fixed;
-    left: calc((100% - 420px)/2 + 20px);
-    bottom: 20px;
-  }
-
-  #w-f0fwyhbu .image-block-css {
-    border-color: rgba(229, 231, 235, 1);
-    border-style: solid;
-    border-width: 0px;
-    position: absolute;
-    z-index: null;
-  }
-
-  #w-f0fwyhbu .image-background {
-    width: 50px;
-    height: 50px;
-    top: 0px;
-    left: 0px;
-    background: center center/ cover no-repeat scroll content-box border-box url("https://content.pancake.vn/1/fwebp/f5/9d/6e/68/68bd732f71085eb122df4674357e52a44ce50cdefc9018e1bfebbf2a-w:200-h:200-l:5929-t:image/png.png");
-    --type: 0;
-  }
-
-  #w-f0fwyhbu .image-background-compare {
-    background: undefined;
-    clip: rect(0, 25px, 50px, 0);
-    --type: 0;
-  }
+  
 
   #w-17tsexjy {
     width: 50px;
@@ -7304,17 +7243,16 @@ body {
 #music-toggle-button {
   position: fixed;
   bottom: 20px;
-  left: 20px;
-  width: 45px;
-  height: 45px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
+  left: 17px; 
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   z-index: 9999;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%;
+  background-size: cover;
   transition: transform 0.2s ease;
+  background-color: transparent;
 }
 
 #music-toggle-button:hover {
@@ -7322,12 +7260,12 @@ body {
 }
 
 #music-toggle-button.playing {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="white"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>');
-  animation: spin 3s linear infinite;
+  background-image: url('https://statics.pancake.vn/web-media/31/08/c9/52/c9f574ca2fa8481e1c8c657100583ddfbf47e33427d480a7dc32e788-w:200-h:200-l:242141-t:image/gif.gif');
+  animation: none;
 }
 
 #music-toggle-button.paused {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="white"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>');
+  background-image: url('https://statics.pancake.vn/web-media/02/d4/a7/88/fef5132f979892c1778a688f2039942fc24b396b332750179775f87e-w:200-h:200-l:8183-t:image/png.png');
 }
 
 @keyframes spin {
