@@ -320,7 +320,7 @@ $border-width: 2px;
 }
 
 .bg-gallery {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/gallery.jpg), no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_1920,h_800/cover.jpg'), no-repeat center center;
     background-size: cover;
 }
 
