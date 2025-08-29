@@ -11413,3 +11413,31 @@ body {
         min-width: 55px;
     }
 }
+
+
+    /* === FIX: Thu gọn Navbar & Banner trên điện thoại === */
+    /* Thu gọn thanh điều hướng trên cùng */
+    .navbar.fixed-top {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+    .navbar .navbar-brand h1 {
+        font-size: 2.2rem; /* Thu nhỏ chữ Tên CDCR trong navbar */
+    }
+
+    /* Thu gọn banner đếm ngược dưới cùng thêm một chút */
+    body {
+        padding-bottom: 60px;
+    }
+    .sticky-countdown-banner {
+        height: 60px;
+    }
+    .sticky-countdown-banner .countdown-number {
+        font-size: 1.5rem;
+    }
+    .sticky-countdown-banner .countdown-label {
+        font-size: 0.6rem;
+    }
+    .sticky-countdown-banner .countdown-item {
+        min-width: 50px;
+    }
