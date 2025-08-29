@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://res.cloudinary.com">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -28,6 +29,8 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <audio id="bg-audio" src="https://res.cloudinary.com/dcvoqxypw/video/upload/v1756219098/background.mp3"
+        preload="auto" autoplay loop muted></audio>
     <!-- Navbar Start -->
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
         <a href="index.html" class="navbar-brand d-block d-lg-none">
@@ -44,7 +47,8 @@
                 <a href="#gallery" class="nav-item nav-link">Bộ ảnh</a>
             </div>
             <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-                <h1 class="font-secondary text-white mb-n2">Thanh Tùng <span class="text-primary">&</span> Hoài Thương</h1>
+                <h1 class="font-secondary text-white mb-n2">Thanh Tùng <span class="text-primary">&</span> Hoài Thương
+                </h1>
             </a>
             <div class="navbar-nav mr-auto py-0">
                 <a href="#family" class="nav-item nav-link">Gia đình</a>
@@ -62,27 +66,33 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_1200,h_600/album9.jpg" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100"
+                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_1200,h_600/album9.jpg"
+                        style="object-fit: cover;">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Thanh Tùng & Hoài Thương</h1>
                             <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
+                                <h3 class="text-uppercase font-weight-normal text-white m-0"
+                                    style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
                             </div>
                             <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                                data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                                data-src="https://www.youtube.com/embed/06-XXOTP3Gc" data-target="#videoModal">
                                 <span></span>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item position-relative" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_1200,h_600/album23.jpg" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100"
+                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_1200,h_600/album23.jpg"
+                        style="object-fit: cover;">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Thanh Tùng & Hoài Thương</h1>
                             <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
+                                <h3 class="text-uppercase font-weight-normal text-white m-0"
+                                    style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
                             </div>
                             <button type="button" class="btn-play mx-auto" data-toggle="modal"
                                 data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
@@ -108,16 +118,18 @@
 
 
     <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>        
+                    </button>
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
@@ -135,36 +147,52 @@
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="row m-0 mb-4 mb-md-0 pb-2 pb-md-0">
-                <div class="col-md-6 p-0 text-center text-md-right">
+                <div class="col-md-6 p-0 order-md-2" style="min-height: 400px;">
+                    <img class="position-absolute w-100 h-100"
+                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/album3.jpg"
+                        style="object-fit: cover;">
+                </div>
+                <div class="col-md-6 p-0 text-center text-md-right order-md-1">
                     <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
                         <h3 class="mb-3">Chú rể</h3>
-                        <p>Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
-                        <h3 class="font-secondary font-weight-normal text-muted mb-3"><i class="fa fa-male text-primary pr-3"></i>Thanh Tùng</h3>
+                        <p>Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos
+                            tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet
+                            est dolor elitr.</p>
+                        <h3 class="font-secondary font-weight-normal text-muted mb-3"><i
+                                class="fa fa-male text-primary pr-3"></i>Thanh Tùng</h3>
                         <div class="position-relative">
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
                             <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 p-0" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/album3.jpg" style="object-fit: cover;">
-                </div>
             </div>
             <div class="row m-0">
                 <div class="col-md-6 p-0" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/album4.jpg" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100"
+                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/album4.jpg"
+                        style="object-fit: cover;">
                 </div>
                 <div class="col-md-6 p-0 text-center text-md-left">
                     <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
                         <h3 class="mb-3">Cô dâu</h3>
-                        <p>Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
-                        <h3 class="font-secondary font-weight-normal text-muted mb-3"><i class="fa fa-female text-primary pr-3"></i>Hoài Thương</h3>
+                        <p>Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos
+                            tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet
+                            est dolor elitr.</p>
+                        <h3 class="font-secondary font-weight-normal text-muted mb-3"><i
+                                class="fa fa-female text-primary pr-3"></i>Hoài Thương</h3>
                         <div class="position-relative">
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
                             <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
@@ -186,7 +214,9 @@
             <div class="container timeline position-relative p-0">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-right">
-                        <img class="img-fluid mr-md-3" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album5.jpg" alt="" loading="lazy">
+                        <img class="img-fluid mr-md-3"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album5.jpg"
+                            alt="" loading="lazy">
                     </div>
                     <div class="col-md-6 text-center text-md-left">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
@@ -197,39 +227,45 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
+                    <div class="col-md-6 text-center text-md-left order-md-2">
+                        <img class="img-fluid ml-md-3"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album6.jpg"
+                            alt="" loading="lazy">
+                    </div>
+                    <div class="col-md-6 text-center text-md-right order-md-1">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
                             <h4 class="mb-2">Buổi hẹn đầu</h4>
                             <p class="text-uppercase mb-2">30/11/2025</p>
                             <p class="m-0">Khoảnh khắc đáng nhớ mở đầu cho chuyện tình của chúng mình.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <img class="img-fluid ml-md-3" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album6.jpg" alt="" loading="lazy">
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 text-center text-md-right">
+                        <img class="img-fluid mr-md-3"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album7.jpg"
+                            alt="" loading="lazy">
+                    </div>
+                    <div class="col-md-6 text-center text-md-left">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
                             <h4 class="mb-2">Cầu hôn</h4>
                             <p class="text-uppercase mb-2">30/11/2025</p>
                             <p class="m-0">Khoảnh khắc thiêng liêng đánh dấu bước ngoặt quan trọng.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <img class="img-fluid ml-md-3" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album7.jpg" alt="" loading="lazy">
-                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
+                    <div class="col-md-6 text-center text-md-left order-md-2">
+                        <img class="img-fluid ml-md-3"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album8.jpg"
+                            alt="" loading="lazy">
+                    </div>
+                    <div class="col-md-6 text-center text-md-right order-md-1">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
                             <h4 class="mb-2">Đính hôn</h4>
                             <p class="text-uppercase mb-2">30/11/2025</p>
                             <p class="m-0">Ngày hạnh phúc khi nhận được lời chúc phúc từ gia đình và bạn bè.</p>
                         </div>
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <img class="img-fluid ml-md-3" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album8.jpg" alt="" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -247,38 +283,56 @@
         </div>
         <div class="owl-carousel gallery-carousel">
             <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album9.jpg" alt="">
-                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album9.jpg" data-lightbox="gallery">
+                <img class="img-fluid w-100"
+                    src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album9.jpg"
+                    alt="">
+                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album9.jpg"
+                    data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
             </div>
             <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album10.jpg" alt="">
-                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album10.jpg" data-lightbox="gallery">
+                <img class="img-fluid w-100"
+                    src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album10.jpg"
+                    alt="">
+                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album10.jpg"
+                    data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
             </div>
             <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album11.jpg" alt="">
-                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album11.jpg" data-lightbox="gallery">
+                <img class="img-fluid w-100"
+                    src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album11.jpg"
+                    alt="">
+                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album11.jpg"
+                    data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
             </div>
             <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album12.jpg" alt="">
-                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album12.jpg" data-lightbox="gallery">
+                <img class="img-fluid w-100"
+                    src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album12.jpg"
+                    alt="">
+                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album12.jpg"
+                    data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
             </div>
             <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album13.jpg" alt="">
-                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album13.jpg" data-lightbox="gallery">
+                <img class="img-fluid w-100"
+                    src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album13.jpg"
+                    alt="">
+                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album13.jpg"
+                    data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
             </div>
             <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album14.jpg" alt="">
-                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album14.jpg" data-lightbox="gallery">
+                <img class="img-fluid w-100"
+                    src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album14.jpg"
+                    alt="">
+                <a href="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,w_1200/album14.jpg"
+                    data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
             </div>
@@ -297,13 +351,17 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
-                    <h5 class="font-weight-normal text-muted mb-3 pb-3">Clita ipsum aliquyam dolor diam dolores elitr nonumy. Rebum sea vero ipsum eirmod tempor kasd. Diam amet lorem erat eos sit lorem elitr justo</h5>
+                    <h5 class="font-weight-normal text-muted mb-3 pb-3">Clita ipsum aliquyam dolor diam dolores elitr
+                        nonumy. Rebum sea vero ipsum eirmod tempor kasd. Diam amet lorem erat eos sit lorem elitr justo
+                    </h5>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 border-right border-primary">
                     <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
-                        <img class="img-fluid mb-4" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album15.jpg" alt="" loading="lazy">
+                        <img class="img-fluid mb-4"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album15.jpg"
+                            alt="" loading="lazy">
                         <h4 class="mb-3">Lễ cưới</h4>
                         <p class="mb-2">123 Đường, Quận, Thành phố</p>
                         <p class="mb-0">30/11/2025 - 11:00</p>
@@ -311,7 +369,9 @@
                 </div>
                 <div class="col-md-6">
                     <div class="text-center text-md-left ml-md-3">
-                        <img class="img-fluid mb-4" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album16.jpg" alt="" loading="lazy">
+                        <img class="img-fluid mb-4"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album16.jpg"
+                            alt="" loading="lazy">
                         <h4 class="mb-3">Tiệc cưới</h4>
                         <p class="mb-2">123 Đường, Quận, Thành phố</p>
                         <p class="mb-0">30/11/2025 - 18:00</p>
@@ -334,15 +394,19 @@
             <div class="row">
                 <div class="col-12 text-center mb-2">
                     <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".first">Phù rể</li>
-                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".second">Phù dâu</li>
+                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".first">Phù rể
+                        </li>
+                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".second">Phù dâu
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="row portfolio-container">
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album17.jpg" alt="" loading="lazy">
+                        <img class="img-fluid w-100"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album17.jpg"
+                            alt="" loading="lazy">
                         <div class="bg-secondary text-center p-4">
                             <h4 class="mb-3">Họ và tên</h4>
                             <p class="text-uppercase">Bạn thân</p>
@@ -357,7 +421,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album20.jpg" alt="" loading="lazy">
+                        <img class="img-fluid w-100"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album20.jpg"
+                            alt="" loading="lazy">
                         <div class="bg-secondary text-center p-4">
                             <h4 class="mb-3">Họ và tên</h4>
                             <p class="text-uppercase">Bạn thân</p>
@@ -372,7 +438,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album19.jpg" alt="" loading="lazy">
+                        <img class="img-fluid w-100"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album19.jpg"
+                            alt="" loading="lazy">
                         <div class="bg-secondary text-center p-4">
                             <h4 class="mb-3">Họ và tên</h4>
                             <p class="text-uppercase">Bạn thân</p>
@@ -387,7 +455,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album22.jpg" alt="" loading="lazy">
+                        <img class="img-fluid w-100"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album22.jpg"
+                            alt="" loading="lazy">
                         <div class="bg-secondary text-center p-4">
                             <h4 class="mb-3">Họ và tên</h4>
                             <p class="text-uppercase">Bạn thân</p>
@@ -402,7 +472,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album21.jpg" alt="" loading="lazy">
+                        <img class="img-fluid w-100"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album21.jpg"
+                            alt="" loading="lazy">
                         <div class="bg-secondary text-center p-4">
                             <h4 class="mb-3">Họ và tên</h4>
                             <p class="text-uppercase">Bạn thân</p>
@@ -417,7 +489,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album23.jpg" alt="" loading="lazy">
+                        <img class="img-fluid w-100"
+                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_400/album23.jpg"
+                            alt="" loading="lazy">
                         <div class="bg-secondary text-center p-4">
                             <h4 class="mb-3">Họ và tên</h4>
                             <p class="text-uppercase">Bạn thân</p>
@@ -450,10 +524,12 @@
                         <form>
                             <div class="form-row">
                                 <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Họ và tên"/>
+                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
+                                        placeholder="Họ và tên" />
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <input type="email" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Email"/>
+                                    <input type="email" class="form-control bg-secondary border-0 py-4 px-3"
+                                        placeholder="Email" />
                                 </div>
                             </div>
                             <div class="form-row">
@@ -475,7 +551,8 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5" placeholder="Lời nhắn" required="required"></textarea>
+                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5"
+                                    placeholder="Lời nhắn" required="required"></textarea>
                             </div>
                             <div>
                                 <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">Gửi</button>
@@ -496,19 +573,6 @@
                 <h1 class="font-secondary display-3 text-white">Xin cảm ơn</h1>
                 <i class="far fa-heart text-white"></i>
             </div>
-            <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="d-flex justify-content-center py-2">
-                <p class="text-white" href="#">info@example.com</p>
-                <span class="px-3">|</span>
-                <p class="text-white" href="#">+012 345 6789</p>
-            </div>
-            <p class="m-0">&copy; <a class="text-primary" href="#">Thiệp cưới Thanh Tùng & Hoài Thương</a>. Thiết kế bởi <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
-            </p>
         </div>
     </div>
     <!-- Footer End -->
@@ -518,7 +582,8 @@
     <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i
+            class="fa fa-angle-double-up"></i></a>
 
 
     <!-- JavaScript Libraries -->

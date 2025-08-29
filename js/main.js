@@ -30,19 +30,52 @@
 
     // Modal Video
     $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
+        var $videoSrc = '';
+        $('.btn-play').on('click', function () {
+            $videoSrc = $(this).data('src');
         });
-        console.log($videoSrc);
 
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
+        $('#videoModal').on('shown.bs.modal', function () {
+            if ($videoSrc) {
+                var src = $videoSrc.replace('www.youtube.com', 'www.youtube-nocookie.com');
+                var params = [
+                    'autoplay=1',
+                    'modestbranding=1',
+                    'showinfo=0',
+                    'rel=0',
+                    'playsinline=1',
+                    'enablejsapi=1'
+                ];
+                if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+                    params.push('origin=' + encodeURIComponent(window.location.origin));
+                }
+                var sep = src.indexOf('?') === -1 ? '?' : '&';
+                var url = src + sep + params.join('&');
+                $('#video').attr('src', url);
+            }
+            var bg = document.getElementById('bg-audio');
+            if (bg) { bg.muted = true; bg.pause(); }
+        });
 
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
+        $('#videoModal').on('hide.bs.modal', function () {
+            if ($videoSrc) {
+                $('#video').attr('src', '');
+            }
+      
+            var bg = document.getElementById('bg-audio');
+            if (bg) { bg.play().catch(function(){}); }
+        });
+
+
+        var enableAudioOnce = function(){
+            var bg = document.getElementById('bg-audio');
+            if (bg) {
+                bg.muted = false;
+                bg.play().catch(function(){});
+            }
+            $(document).off('click keydown touchstart', enableAudioOnce);
+        };
+        $(document).on('click keydown touchstart', enableAudioOnce);
     });
 
 
