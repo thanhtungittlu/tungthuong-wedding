@@ -29,8 +29,9 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <audio id="bg-audio" src="https://res.cloudinary.com/dcvoqxypw/video/upload/v1756219098/background.mp3"
-        preload="auto" autoplay loop muted></audio>
+    <audio autoplay loop id="bg-audio">
+        <source src="https://res.cloudinary.com/dcvoqxypw/video/upload/v1756219098/background.mp3" type="audio/mpeg" preload="auto" autoplay loop muted>
+    </audio>
     <!-- Navbar Start -->
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
         <a href="index.html" class="navbar-brand d-block d-lg-none">
@@ -77,7 +78,7 @@
                                     style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
                             </div>
                             <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                                data-src="https://www.youtube.com/embed/06-XXOTP3Gc" data-target="#videoModal">
+                                data-src="https://www.youtube.com/embed/IOe0tNoUGv8" data-target="#videoModal">
                                 <span></span>
                             </button>
                         </div>
@@ -95,7 +96,7 @@
                                     style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
                             </div>
                             <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                                data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                                data-src="https://www.youtube.com/embed/IOe0tNoUGv8" data-target="#videoModal">
                                 <span></span>
                             </button>
                         </div>
@@ -114,19 +115,14 @@
             </a>
         </div>
     </div>
-    <!-- Carousel End -->
-
-
-    <!-- Video Modal Start -->
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered video-modal-custom" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
                             allow="autoplay"></iframe>
@@ -135,7 +131,6 @@
             </div>
         </div>
     </div>
-    <!-- Video Modal End -->
 
 
     <!-- About Start -->
@@ -154,12 +149,8 @@
                 </div>
                 <div class="col-md-6 p-0 text-center text-md-right order-md-1">
                     <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3">Chú rể</h3>
-                        <p>Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos
-                            tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet
-                            est dolor elitr.</p>
-                        <h3 class="font-secondary font-weight-normal text-muted mb-3"><i
-                                class="fa fa-male text-primary pr-3"></i>Thanh Tùng</h3>
+                        <h3 class="mb-3 font-secondary" style="font-size: 2.5rem;"><i class="fa fa-male text-primary pr-3"></i>Thanh Tùng</h3>
+                        <p class="mb-4">Là một chàng trai ấm áp và chân thành, Tùng luôn là điểm tựa vững chắc cho những người anh yêu thương. Từ ngày gặp Thương, cuộc sống của anh thêm rực rỡ và tràn ngập tiếng cười. Anh mong chờ mỗi ngày sắp tới để cùng cô ấy xây dựng một tổ ấm hạnh phúc.</p>
                         <div class="position-relative">
                             <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
                                     class="fab fa-twitter"></i></a>
@@ -180,12 +171,8 @@
                 </div>
                 <div class="col-md-6 p-0 text-center text-md-left">
                     <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3">Cô dâu</h3>
-                        <p>Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos
-                            tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet
-                            est dolor elitr.</p>
-                        <h3 class="font-secondary font-weight-normal text-muted mb-3"><i
-                                class="fa fa-female text-primary pr-3"></i>Hoài Thương</h3>
+                        <h3 class="mb-3 font-secondary" style="font-size: 2.5rem;"><i class="fa fa-female text-primary pr-3"></i>Hoài Thương</h3>
+                        <p class="mb-4">Mang trong mình nụ cười tỏa nắng và một trái tim nhân hậu, Thương là người con gái dịu dàng đã thắp sáng cuộc đời Tùng. Cô ấy yêu những điều bình dị và luôn biết cách vun đắp cho tình yêu của cả hai. Đối với Thương, được cùng Tùng đi hết quãng đời còn lại là niềm hạnh phúc lớn lao nhất.</p>
                         <div class="position-relative">
                             <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
                                     class="fab fa-instagram"></i></a>
@@ -202,76 +189,110 @@
     </div>
     <!-- About End -->
 
-
-    <!-- Story Start -->
-    <div class="container-fluid py-5" id="story">
-        <div class="container pt-5 pb-3">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Chuyện tình</h6>
-                <h1 class="font-secondary display-4">Câu chuyện tình yêu</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <img class="img-fluid mr-md-3"
-                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album5.jpg"
-                            alt="" loading="lazy">
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">Lần đầu gặp gỡ</h4>
-                            <p class="text-uppercase mb-2">30/11/2025</p>
-                            <p class="m-0">Những dòng chia sẻ ngắn gọn về lần đầu gặp gỡ của hai chúng mình.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-left order-md-2">
-                        <img class="img-fluid ml-md-3"
-                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album6.jpg"
-                            alt="" loading="lazy">
-                    </div>
-                    <div class="col-md-6 text-center text-md-right order-md-1">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                            <h4 class="mb-2">Buổi hẹn đầu</h4>
-                            <p class="text-uppercase mb-2">30/11/2025</p>
-                            <p class="m-0">Khoảnh khắc đáng nhớ mở đầu cho chuyện tình của chúng mình.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <img class="img-fluid mr-md-3"
-                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album7.jpg"
-                            alt="" loading="lazy">
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">Cầu hôn</h4>
-                            <p class="text-uppercase mb-2">30/11/2025</p>
-                            <p class="m-0">Khoảnh khắc thiêng liêng đánh dấu bước ngoặt quan trọng.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-left order-md-2">
-                        <img class="img-fluid ml-md-3"
-                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_300,h_200/album8.jpg"
-                            alt="" loading="lazy">
-                    </div>
-                    <div class="col-md-6 text-center text-md-right order-md-1">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                            <h4 class="mb-2">Đính hôn</h4>
-                            <p class="text-uppercase mb-2">30/11/2025</p>
-                            <p class="m-0">Ngày hạnh phúc khi nhận được lời chúc phúc từ gia đình và bạn bè.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Story Start -->
+<!-- Story Start -->
+<div class="container-fluid py-5" id="story">
+  <div class="container pt-5 pb-3">
+    <div class="section-title position-relative text-center">
+      <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Chuyện tình</h6>
+      <h1 class="font-secondary display-4">Câu chuyện tình yêu</h1>
+      <i class="far fa-heart text-dark"></i>
     </div>
-    <!-- Story End -->
+
+    <div class="container timeline position-relative p-0">
+
+      <!-- 1) 1999 -->
+      <div class="row timeline-row align-items-stretch">
+        <div class="date-chip-wrap order-1"><span class="date-chip">1999</span></div>
+        <div class="col-md-6 pad-r-md text-center text-md-right order-2 order-md-1">
+          <img class="timeline-img"
+               src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_800,h_540/album5.jpg"
+               alt="Thuở ấu thơ" loading="lazy">
+        </div>
+        <div class="col-md-6 pad-l-md text-center text-md-left order-3 order-md-2 d-flex">
+          <div class="story-box">
+            <h4 class="mb-2">Thuở ấu thơ</h4>
+            <p class="story-meta">Biết nhau từ thuở bé</p>
+            <p class="m-0">Chúng mình quen nhau từ nhỏ, đi học cùng nhau gần như suốt từ mẫu giáo đến hết cấp 3, phần lớn còn học chung lớp. Hai gia đình cũng rất thân thiết vì mẹ của cả hai đều là giáo viên dạy chung một trường.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2) 2017 -->
+      <div class="row timeline-row align-items-stretch">
+        <div class="date-chip-wrap order-1"><span class="date-chip">2017</span></div>
+        <div class="col-md-6 pad-l-md text-center text-md-left order-2 order-md-2">
+          <img class="timeline-img"
+               src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_800,h_540/album6.jpg"
+               alt="Những năm đại học" loading="lazy">
+        </div>
+        <div class="col-md-6 pad-r-md text-center text-md-right order-3 order-md-1 d-flex">
+          <div class="story-box">
+            <h4 class="mb-2">Những năm đại học</h4>
+            <p class="story-meta">Mỗi người một trường</p>
+            <p class="m-0">Mỗi người theo đuổi con đường riêng, nhưng chúng mình vẫn giữ liên lạc, thỉnh thoảng gặp nhau và luôn có mặt mỗi khi người kia cần.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3) 2020 -->
+      <div class="row timeline-row align-items-stretch">
+        <div class="date-chip-wrap order-1"><span class="date-chip">2020</span></div>
+        <div class="col-md-6 pad-r-md text-center text-md-right order-2 order-md-1">
+          <img class="timeline-img"
+               src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_800,h_540/album7.jpg"
+               alt="Mùa dịch đến" loading="lazy">
+        </div>
+        <div class="col-md-6 pad-l-md text-center text-md-left order-3 order-md-2 d-flex">
+          <div class="story-box">
+            <h4 class="mb-2">Mùa dịch đến</h4>
+            <p class="story-meta">Gần nhau hơn</p>
+            <p class="m-0">Khi Covid ập đến, cả hai cùng về quê. Ở gần nhau nhiều hơn, chúng mình nhận ra tình cảm đã lớn dần và bắt đầu hẹn hò.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4) 2022 -->
+      <div class="row timeline-row align-items-stretch">
+        <div class="date-chip-wrap order-1"><span class="date-chip">2022</span></div>
+        <div class="col-md-6 pad-l-md text-center text-md-left order-2 order-md-2">
+          <img class="timeline-img"
+               src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_800,h_540/album9.jpg"
+               alt="Hành trình lập nghiệp" loading="lazy">
+        </div>
+        <div class="col-md-6 pad-r-md text-center text-md-right order-3 order-md-1 d-flex">
+          <div class="story-box">
+            <h4 class="mb-2">Hành trình lập nghiệp</h4>
+            <p class="story-meta">Từ Hà Nội đến Đà Nẵng</p>
+            <p class="m-0">Sau dịch, chúng mình trở lại Hà Nội với công việc đầu tiên; đến 2024, cả hai quyết định chuyển vào Đà Nẵng để sống và làm việc – môi trường mới, con người mới nhưng tình yêu vẫn bền chặt.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5) 2025 -->
+      <div class="row timeline-row align-items-stretch">
+        <div class="date-chip-wrap order-1"><span class="date-chip">2025</span></div>
+        <div class="col-md-6 pad-r-md text-center text-md-right order-2 order-md-1">
+          <img class="timeline-img"
+               src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_800,h_540/album10.jpg"
+               alt="Về chung một nhà" loading="lazy">
+        </div>
+        <div class="col-md-6 pad-l-md text-center text-md-left order-3 order-md-2 d-flex">
+          <div class="story-box">
+            <h4 class="mb-2">Về chung một nhà</h4>
+            <p class="story-meta">Hạnh phúc trọn vẹn</p>
+            <p class="m-0">Sau 5 năm bên nhau, chúng mình tổ chức đám cưới và chính thức về chung một nhà, mở ra hành trình mới tràn đầy yêu thương.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Story End -->
+
+
+
 
 
     <!-- Gallery Start -->
@@ -342,44 +363,79 @@
 
 
     <!-- Event Start -->
-    <div class="container-fluid py-5" id="event">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Sự kiện</h6>
-                <h1 class="font-secondary display-4">Lịch cưới của chúng mình</h1>
-                <i class="far fa-heart text-dark"></i>
+<div class="container-fluid py-5" id="event">
+    <div class="container py-5">
+        <div class="section-title position-relative text-center">
+            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Sự kiện</h6>
+            <h1 class="font-secondary display-4">Lịch cưới của chúng mình</h1>
+            <i class="far fa-heart text-dark"></i>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 text-center">
+                <h5 class="font-weight-normal text-muted mb-5">
+                    Chúng mình trân trọng kính mời gia đình và bạn bè đến chung vui trong những sự kiện quan trọng của hành trình tình yêu này. Sự hiện diện của bạn là niềm vinh hạnh lớn lao cho gia đình chúng mình.
+                </h5>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h5 class="font-weight-normal text-muted mb-3 pb-3">Clita ipsum aliquyam dolor diam dolores elitr
-                        nonumy. Rebum sea vero ipsum eirmod tempor kasd. Diam amet lorem erat eos sit lorem elitr justo
-                    </h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 border-right border-primary">
-                    <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
-                        <img class="img-fluid mb-4"
-                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album15.jpg"
-                            alt="" loading="lazy">
-                        <h4 class="mb-3">Lễ cưới</h4>
-                        <p class="mb-2">123 Đường, Quận, Thành phố</p>
-                        <p class="mb-0">30/11/2025 - 11:00</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="event-schedule">
+                    <div class="event-item">
+                        <div class="event-time">
+                            <span class="day">Thứ Bảy</span>
+                            <span class="date">29.11</span>
+                        </div>
+                        <div class="event-details">
+                            <h4 class="event-title">Lễ Đám Hỏi & Nạp Tài</h4>
+                            <p class="event-meta">09:00 | Tại tư gia nhà gái</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-center text-md-left ml-md-3">
-                        <img class="img-fluid mb-4"
-                            src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_300/album16.jpg"
-                            alt="" loading="lazy">
-                        <h4 class="mb-3">Tiệc cưới</h4>
-                        <p class="mb-2">123 Đường, Quận, Thành phố</p>
-                        <p class="mb-0">30/11/2025 - 18:00</p>
+                    <div class="event-item">
+                        <div class="event-time">
+                            <span class="day">Thứ Bảy</span>
+                            <span class="date">29.11</span>
+                        </div>
+                        <div class="event-details">
+                            <h4 class="event-title">Tiệc Cưới Nhà Gái</h4>
+                            <p class="event-meta">11:30 | Chung vui cùng gia đình, quan khách</p>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-time">
+                            <span class="day">Thứ Bảy</span>
+                            <span class="date">29.11</span>
+                        </div>
+                        <div class="event-details">
+                            <h4 class="event-title">Chung Vui Cùng Bạn Bè</h4>
+                            <p class="event-meta">15:00 | Mời bà con, láng giềng & bạn bè thân thiết</p>
+                        </div>
+                    </div>
+                     <div class="event-item">
+                        <div class="event-time">
+                            <span class="day">Chủ Nhật</span>
+                            <span class="date">30.11</span>
+                        </div>
+                        <div class="event-details">
+                            <h4 class="event-title">Lễ Rước Dâu & Gia Tiên</h4>
+                            <p class="event-meta">09:00 | Tại tư gia nhà trai</p>
+                        </div>
+                    </div>
+                     <div class="event-item">
+                        <div class="event-time">
+                            <span class="day">Chủ Nhật</span>
+                            <span class="date">30.11</span>
+                        </div>
+                        <div class="event-details">
+                            <h4 class="event-title">Tiệc Cưới Nhà Trai</h4>
+                            <p class="event-meta">11:30 | Chung vui cùng gia đình, quan khách</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <!-- Event End -->
 
 

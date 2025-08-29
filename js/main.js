@@ -37,24 +37,12 @@
 
         $('#videoModal').on('shown.bs.modal', function () {
             if ($videoSrc) {
-                var src = $videoSrc.replace('www.youtube.com', 'www.youtube-nocookie.com');
-                var params = [
-                    'autoplay=1',
-                    'modestbranding=1',
-                    'showinfo=0',
-                    'rel=0',
-                    'playsinline=1',
-                    'enablejsapi=1'
-                ];
-                if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
-                    params.push('origin=' + encodeURIComponent(window.location.origin));
-                }
-                var sep = src.indexOf('?') === -1 ? '?' : '&';
-                var url = src + sep + params.join('&');
+                var sep = $videoSrc.indexOf('?') === -1 ? '?' : '&';
+                var url = $videoSrc + sep + 'autoplay=1';
                 $('#video').attr('src', url);
             }
             var bg = document.getElementById('bg-audio');
-            if (bg) { bg.muted = true; bg.pause(); }
+            if (bg) { bg.pause(); }
         });
 
         $('#videoModal').on('hide.bs.modal', function () {
@@ -66,11 +54,10 @@
             if (bg) { bg.play().catch(function(){}); }
         });
 
-
+        
         var enableAudioOnce = function(){
             var bg = document.getElementById('bg-audio');
             if (bg) {
-                bg.muted = false;
                 bg.play().catch(function(){});
             }
             $(document).off('click keydown touchstart', enableAudioOnce);
@@ -147,4 +134,3 @@
     });
     
 })(jQuery);
-
