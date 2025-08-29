@@ -11215,3 +11215,201 @@ a.text-dark:focus {
   text-align: justify;
   text-justify: inter-word;
 }
+
+.container-fluid p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+/* Sticky Countdown Banner Styles - UPDATED */
+.sticky-countdown-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(15, 59, 90, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* === FIX: Đảm bảo banner luôn hiển thị ngay lập tức === */
+    display: flex !important; 
+    align-items: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.countdown-title {
+    margin-right: 1.5rem;
+}
+
+.sticky-countdown-banner #wedding-countdown {
+    gap: 15px;
+}
+
+.sticky-countdown-banner .countdown-item {
+    background-color: transparent;
+    padding: 0;
+    min-width: 70px;
+    text-align: center;
+    box-shadow: none;
+}
+
+.sticky-countdown-banner .countdown-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.sticky-countdown-banner .countdown-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+}
+
+body {
+    padding-bottom: 80px;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 767px) {
+    body {
+        padding-bottom: 70px;
+    }
+    .sticky-countdown-banner {
+        height: 70px;
+    }
+    .sticky-countdown-banner .countdown-number {
+        font-size: 1.8rem;
+    }
+    .sticky-countdown-banner .countdown-item {
+        min-width: 55px;
+    }
+}
+
+
+
+/* =================================================================== */
+/* === KHỐI CSS HOÀN CHỈNH CHO BANNER & COUNTDOWN (BẢN CUỐI CÙNG) === */
+/* =================================================================== */
+
+/* --- 1. Carousel Banner Styling --- */
+#home .carousel-item {
+    height: 100vh;
+    min-height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#home .carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Lớp phủ tối mờ */
+}
+#home .carousel-caption {
+    z-index: 1;
+}
+#home .display-1 {
+    line-height: 1; /* Giảm khoảng cách giữa 2 dòng tên */
+    position: relative;
+    padding: 0 1rem;
+}
+/* Thêm ký tự '&' vào giữa 2 dòng tên một cách tinh tế */
+#home .display-1::before {
+    content: '&';
+    font-family: 'Great Vibes', cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+/* --- 2. Sticky Countdown Banner Styling --- */
+.sticky-countdown-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(15, 59, 90, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex !important; /* Luôn hiển thị */
+    align-items: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.countdown-title {
+    margin-right: 1.5rem;
+}
+.sticky-countdown-banner #wedding-countdown {
+    gap: 15px;
+}
+.sticky-countdown-banner .countdown-item {
+    background-color: transparent;
+    padding: 0;
+    min-width: 70px;
+    text-align: center;
+    box-shadow: none;
+}
+.sticky-countdown-banner .countdown-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.1;
+}
+.sticky-countdown-banner .countdown-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+}
+
+/* --- 3. Body Padding & Mobile Responsive --- */
+body {
+    padding-bottom: 80px; /* Khoảng đệm cho banner */
+}
+@media (max-width: 767.98px) {
+    #home .carousel-item {
+        height: 90vh;
+        min-height: 500px;
+    }
+    #home .display-1 {
+        font-size: 3.5rem; /* Điều chỉnh lại kích thước cho 2 dòng */
+    }
+    #home .display-1::before {
+        font-size: 1.8rem;
+    }
+    body {
+        padding-bottom: 70px;
+    }
+    .sticky-countdown-banner {
+        height: 70px;
+    }
+    .sticky-countdown-banner .countdown-number {
+        font-size: 1.8rem;
+    }
+    .sticky-countdown-banner .countdown-item {
+        min-width: 55px;
+    }
+}

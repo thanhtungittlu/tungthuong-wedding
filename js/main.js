@@ -132,5 +132,43 @@
             }
         }
     });
+    // Countdown Timer
+    function startCountdown() {
+        // SET YOUR WEDDING DATE HERE
+        const weddingDate = new Date("November 29, 2025 09:00:00").getTime();
+
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            // Calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Function to add leading zero
+            const formatTime = (time) => time < 10 ? `0${time}` : time;
+
+            // Display the result in the elements
+            document.getElementById("days").innerText = formatTime(days);
+            document.getElementById("hours").innerText = formatTime(hours);
+            document.getElementById("minutes").innerText = formatTime(minutes);
+            document.getElementById("seconds").innerText = formatTime(seconds);
+
+            // If the countdown is over, write some text 
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("wedding-countdown").innerHTML = "<h3 class='font-secondary'>Happy Wedding Day!</h3>";
+            }
+        }, 1000);
+    }
+    
+    // Start the countdown when the document is ready
+    $(document).ready(function() {
+        if ($('#wedding-countdown').length) {
+            startCountdown();
+        }
+    });
     
 })(jQuery);

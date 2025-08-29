@@ -61,60 +61,89 @@
     </nav>
     <!-- Navbar End -->
 
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5 pb-5" id="home">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100"
-                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_1200,h_600/album9.jpg"
-                        style="object-fit: cover;">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Thanh Tùng & Hoài Thương</h1>
-                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0"
-                                    style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
-                            </div>
-                            <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                                data-src="https://www.youtube.com/embed/IOe0tNoUGv8" data-target="#videoModal">
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
+    <div class="sticky-countdown-banner">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-auto d-none d-lg-block">
+                    <h4 class="countdown-title font-secondary text-white mb-0">Ngày Chung Đôi:</h4>
                 </div>
-                <div class="carousel-item position-relative" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100"
-                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_1200,h_600/album23.jpg"
-                        style="object-fit: cover;">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Thanh Tùng & Hoài Thương</h1>
-                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0"
-                                    style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
-                            </div>
-                            <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                                data-src="https://www.youtube.com/embed/IOe0tNoUGv8" data-target="#videoModal">
-                                <span></span>
-                            </button>
+                <div class="col-auto">
+                    <div id="wedding-countdown" class="d-flex">
+                        <div class="countdown-item">
+                            <span id="days" class="countdown-number">00</span>
+                            <span class="countdown-label">Ngày</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours" class="countdown-number">00</span>
+                            <span class="countdown-label">Giờ</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes" class="countdown-number">00</span>
+                            <span class="countdown-label">Phút</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds" class="countdown-number">00</span>
+                            <span class="countdown-label">Giây</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev justify-content-start" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
-                    <span class="carousel-control-prev-icon mt-3"></span>
-                </div>
-            </a>
-            <a class="carousel-control-next justify-content-end" href="#header-carousel" data-slide="next">
-                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
-                    <span class="carousel-control-next-icon mt-3"></span>
-                </div>
-            </a>
         </div>
+</div>
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0" id="home">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" 
+                 style="background-image: url('https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto/album9.jpg');">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h1 class="display-1 font-secondary text-white">Thanh Tùng<br>Hoài Thương</h1>
+                        <div class="d-inline-block border-top border-bottom border-light py-3 px-4 mt-4">
+                            <h3 class="text-uppercase font-weight-normal text-white m-0"
+                                style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
+                        </div>
+                        <button type="button" class="btn-play mx-auto" data-toggle="modal"
+                            data-src="https://www.youtube.com/embed/IOe0tNoUGv8" data-target="#videoModal">
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" 
+                 style="background-image: url('https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto/album23.jpg');">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h1 class="display-1 font-secondary text-white">Thanh Tùng<br>Hoài Thương</h1>
+                        <div class="d-inline-block border-top border-bottom border-light py-3 px-4 mt-4">
+                            <h3 class="text-uppercase font-weight-normal text-white m-0"
+                                style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
+                        </div>
+                        <button type="button" class="btn-play mx-auto" data-toggle="modal"
+                            data-src="https://www.youtube.com/embed/IOe0tNoUGv8" data-target="#videoModal">
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev justify-content-start" href="#header-carousel" data-slide="prev">
+            <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
+                <span class="carousel-control-prev-icon mt-3"></span>
+            </div>
+        </a>
+        <a class="carousel-control-next justify-content-end" href="#header-carousel" data-slide="next">
+            <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
+                <span class="carousel-control-next-icon mt-3"></span>
+            </div>
+        </a>
     </div>
+</div>
+   
+    <!-- Carousel end -->
+
+    <!-- Video Modal start-->
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered video-modal-custom" role="document">
@@ -131,20 +160,22 @@
             </div>
         </div>
     </div>
+    <!-- Video Modal End -->
 
+    
 
     <!-- About Start -->
     <div class="container-fluid py-5" id="about">
         <div class="container py-5">
             <div class="section-title position-relative text-center">
                 <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Giới thiệu</h6>
-                <h1 class="font-secondary display-4">Chú rể & Cô dâu</h1>
+                <h1 class="font-secondary display-4">Chú rể  &  Cô dâu</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="row m-0 mb-4 mb-md-0 pb-2 pb-md-0">
                 <div class="col-md-6 p-0 order-md-2" style="min-height: 400px;">
                     <img class="position-absolute w-100 h-100"
-                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/album3.jpg"
+                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/anh.jpg"
                         style="object-fit: cover;">
                 </div>
                 <div class="col-md-6 p-0 text-center text-md-right order-md-1">
@@ -166,7 +197,7 @@
             <div class="row m-0">
                 <div class="col-md-6 p-0" style="min-height: 400px;">
                     <img class="position-absolute w-100 h-100"
-                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/album4.jpg"
+                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/em.jpg"
                         style="object-fit: cover;">
                 </div>
                 <div class="col-md-6 p-0 text-center text-md-left">
@@ -189,7 +220,6 @@
     </div>
     <!-- About End -->
 
-<!-- Story Start -->
 <!-- Story Start -->
 <div class="container-fluid py-5" id="story">
   <div class="container pt-5 pb-3">
