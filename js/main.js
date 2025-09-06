@@ -170,5 +170,22 @@
             startCountdown();
         }
     });
+
+    // First Animation
+    // Splash Screen Logic (Clip-Path Method)
+    $(window).on('load', function() {
+        const splashScreen = $('#splashScreen');
     
+        if (splashScreen.length) {
+            setTimeout(function() {
+                splashScreen.addClass('hide');
+                
+                setTimeout(function() {
+                    splashScreen.remove();
+                }, 3000);
+            }, 1000);
+        }
+    });
+
+
 })(jQuery);
