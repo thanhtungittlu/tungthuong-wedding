@@ -23,21 +23,51 @@
             if ($videoSrc) {
                 $('#video').attr('src', '');
             }
-      
+
             var bg = document.getElementById('bg-audio');
-            if (bg) { bg.play().catch(function(){}); }
+            if (bg) { bg.play().catch(function () { }); }
         });
 
-        
-        var enableAudioOnce = function(){
+
+        var enableAudioOnce = function () {
             var bg = document.getElementById('bg-audio');
             if (bg) {
-                bg.play().catch(function(){});
+                bg.play().catch(function () { });
             }
             $(document).off('click keydown touchstart', enableAudioOnce);
         };
         $(document).on('click keydown touchstart', enableAudioOnce);
+
+        // === Music FAB ===
+        var bg = document.getElementById('bg-audio');
+        var musicBtn = document.getElementById('music-toggle');
+
+        function setMusicState(playing) {
+            if (!musicBtn) return;
+            musicBtn.classList.toggle('playing', !!playing);
+            musicBtn.classList.toggle('muted', !playing);
+        }
+
+        if (musicBtn && bg) {
+            // trạng thái ban đầu
+            setMusicState(!bg.paused && !bg.muted);
+
+            musicBtn.addEventListener('click', function () {
+                if (bg.paused || bg.muted) {
+                    bg.muted = false;
+                    bg.play().then(function () { setMusicState(true); })
+                        .catch(function () { /* bị chặn autoplay */ });
+                } else {
+                    bg.pause();
+                    setMusicState(false);
+                }
+            });
+        }
+
+
     });
+
+
 
 
     // Scroll to Bottom
@@ -59,10 +89,10 @@
         $("#portfolio-flters li").removeClass('active');
         $(this).addClass('active');
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        portfolioIsotope.isotope({ filter: $(this).data('filter') });
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
@@ -72,7 +102,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -83,26 +113,26 @@
         smartSpeed: 1500,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="fa fa-angle-left" aria-hidden="true"></i>',
             '<i class="fa fa-angle-right" aria-hidden="true"></i>'
         ],
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:2
+            576: {
+                items: 2
             },
-            768:{
-                items:3
+            768: {
+                items: 3
             },
-            992:{
-                items:4
+            992: {
+                items: 4
             },
-            1200:{
-                items:5
+            1200: {
+                items: 5
             }
         }
     });
@@ -111,7 +141,7 @@
         // SET YOUR WEDDING DATE HERE
         const weddingDate = new Date("November 29, 2025 09:00:00").getTime();
 
-        const countdownInterval = setInterval(function() {
+        const countdownInterval = setInterval(function () {
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
@@ -120,7 +150,7 @@
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
+
             // Function to add leading zero
             const formatTime = (time) => time < 10 ? `0${time}` : time;
 
@@ -137,9 +167,9 @@
             }
         }, 1000);
     }
-    
+
     // Start the countdown when the document is ready
-    $(document).ready(function() {
+    $(document).ready(function () {
         if ($('#wedding-countdown').length) {
             startCountdown();
         }
@@ -147,14 +177,14 @@
 
     // First Animation
     // Splash Screen Logic (Clip-Path Method)
-    $(window).on('load', function() {
+    $(window).on('load', function () {
         const splashScreen = $('#splashScreen');
-    
+
         if (splashScreen.length) {
-            setTimeout(function() {
+            setTimeout(function () {
                 splashScreen.addClass('hide');
-                
-                setTimeout(function() {
+
+                setTimeout(function () {
                     splashScreen.remove();
                 }, 3000);
             }, 1000);
@@ -163,3 +193,12 @@
 
 
 })(jQuery);
+
+(function () {
+    const el = document.querySelector('#thanks');
+    if (!el) return;
+    const io = new IntersectionObserver((ents) => {
+        ents.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .35 });
+    io.observe(el);
+})();

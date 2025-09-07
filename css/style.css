@@ -10726,248 +10726,204 @@ a.text-dark:focus {
 
 
 /* =================================================================== */
-/* === KHỐI CSS HOÀN CHỈNH CHO BANNER & COUNTDOWN (BẢN CUỐI CÙNG) === */
+/* ================================================================= */
+/* === HERO SECTION REDESIGN (FINAL V10 - Left-aligned Layout & Dynamic Hearts) === */
+/* ================================================================= */
 
 /* --- 1. Carousel & Background --- */
+#home {
+    position: relative;
+    overflow: hidden; /* Quan trọng để trái tim không tràn ra ngoài khi bắt đầu */
+}
 #home .carousel-item {
     height: 100vh;
-    min-height: 700px;
+    min-height: 650px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    animation: zoom-in-out 30s linear infinite;
 }
-/* Lớp phủ tối nhẹ hơn, giúp chữ nổi bật */
 #home .carousel-item::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Giảm độ tối của lớp phủ */
-    z-index: 1; /* Nằm trên ảnh, dưới nội dung */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2)); /* Lớp phủ tối gradient */
+    z-index: 1;
 }
 
-/* --- 2. Main Content Wrapper --- */
-.hero-content-wrapper {
+@keyframes zoom-in-out {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* --- 2. Bố cục nội dung chính - GÓC DƯỚI BÊN TRÁI --- */
+.hero-content-wrapper-new {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center; /* Căn giữa theo chiều dọc */
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    padding: 1rem;
-    z-index: 2; /* Đảm bảo nội dung luôn nằm trên cùng */
+    bottom: 0; /* Gắn vào đáy */
+    left: 0; /* Gắn vào bên trái */
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 3rem 4rem; /* Khoảng cách vào trong */
+    z-index: 2;
+    color: #fff;
+    text-align: left; /* Căn trái toàn bộ chữ */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: content-fade-up 1.5s 1s ease-out forwards;
 }
 
-.hero-content-box {
-    width: 100%;
-    max-width: 650px;
-    padding: 2.5rem 2rem;
-    
-    /* FIX: Giảm độ mờ và làm nền sáng hơn */
-    background: rgba(255, 255, 255, 0.1); /* Nền trắng trong suốt nhẹ */
-    backdrop-filter: blur(2px); /* Giảm độ mờ */
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
+@keyframes content-fade-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- 3. Typography & Text Styling --- */
+.hero-intro-text, .hero-title, .hero-date p, .countdown-number, .countdown-label {
+    color: #fff;
+    text-shadow: 
+        -1px -1px 0 #333,  
+         1px -1px 0 #333,
+        -1px  1px 0 #333,
+         1px  1px 0 #333,
+         0 0 15px rgba(0,0,0,0.5);
+}
+
 .hero-intro-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    margin-bottom: 1.8rem;
-    color: #fff; /* Chữ trắng rõ nét */
-    font-weight: 500;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.4); /* Thêm đổ bóng nhẹ cho chữ */
+    letter-spacing: 4px;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
-.hero-names {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-.hero-names h2 {
+.hero-title {
     font-size: 5rem;
-    line-height: 1;
-    margin: 0;
-    color: #fff; /* Chữ trắng */
-    text-shadow: 0 3px 15px rgba(0,0,0,0.5); /* Đổ bóng mạnh hơn để nổi bật */
-}
-.ampersand {
-    font-size: 3rem;
-    color: #E47A2E; /* Màu cam nổi bật cho dấu '&' */
-    margin: 0.5rem 0;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    line-height: 1.1;
+    margin: 0 0 1rem 0; /* Bỏ auto, căn trái */
+    display: block; /* Để không bị ép thành inline */
 }
 .hero-date {
-    margin: 2rem 0;
-    font-weight: 500;
-    color: #fff; /* Chữ trắng */
+    margin: 1rem 0 1.5rem 0;
+    font-weight: 400;
     font-size: 1.1rem;
-    line-height: 1.5;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    border-left: 3px solid #E47A2E;
+    padding-left: 1.5rem;
 }
-.hero-date p { margin: 0; }
+.hero-date p { margin: 0; line-height: 1.6; }
 .lunar-date {
     font-size: 0.9rem;
-    opacity: 0.9;
-    margin-top: 0.5rem;
+    opacity: 0.8;
 }
 
 /* --- 4. Countdown Styling --- */
 #wedding-countdown {
-    gap: 1.8rem;
-    margin-top: 2.5rem;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-start; /* Căn trái */
 }
 .countdown-item {
-    background: transparent;
-    padding: 0;
-    min-width: auto;
-    box-shadow: none;
+    text-align: left;
 }
 .countdown-number {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.1;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 .countdown-label {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 5px;
     letter-spacing: 1px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
-/* --- 5. Nút Play Video (Khôi phục animation template gốc) --- */
-.btn-play {
-    position: relative;
-    display: block;
-    box-sizing: content-box;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    outline: none !important;
-    background: #E47A2E; /* Màu nền của nút */
-    cursor: pointer;
-}
-
-.btn-play:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: #E47A2E;
-    border-radius: 50%;
-    animation: pulse-border 1500ms ease-out infinite;
-}
-
-.btn-play:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: #E47A2E;
-    border-radius: 50%;
-    transition: all 200ms ease;
-}
-
-.btn-play span {
-    display: block;
-    position: relative;
+/* --- 5. HIỆU ỨNG TRÁI TIM RƠI (IMAGE-BASED & DYNAMIC) --- */
+.falling-hearts {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
     z-index: 3;
-    width: 0;
-    height: 0;
-    border-left: 15px solid #ffffff;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    left: 17px;
+    overflow: hidden; /* Đảm bảo trái tim không hiển thị khi nằm ngoài */
 }
-
-@keyframes pulse-border {
+.falling-hearts i {
+    position: absolute;
+    top: -5vh; /* Bắt đầu bên ngoài màn hình phía trên */
+    width: 35px; /* FIX: KÍCH THƯỚC TO HƠN */
+    height: 35px;
+    background-image: url('https://res.cloudinary.com/dcvoqxypw/image/upload/v1757254558/traitim.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0; /* Bắt đầu ẩn */
+    animation: heart-fall linear infinite;
+}
+@keyframes heart-fall {
     0% {
-        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        transform: translateY(0) rotate(0deg);
         opacity: 0;
     }
+    5% {
+        opacity: 0.9; /* Hiện ra nhanh */
+    }
+    95% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg); /* Rơi xuống và xoay */
+        opacity: 0; /* Biến mất khi chạm đáy */
+    }
 }
+/* Tạo sự ngẫu nhiên cho các trái tim */
+/* Điều chỉnh left, animation-duration, animation-delay và scale để đa dạng hơn */
+.falling-hearts i:nth-child(1) { left: 10%; animation-duration: 13s; animation-delay: 0s; transform: scale(0.9); }
+.falling-hearts i:nth-child(2) { left: 25%; animation-duration: 15s; animation-delay: -3s; transform: scale(1.1); }
+.falling-hearts i:nth-child(3) { left: 40%; animation-duration: 10s; animation-delay: -5s; transform: scale(0.8); }
+.falling-hearts i:nth-child(4) { left: 55%; animation-duration: 17s; animation-delay: -7s; transform: scale(1.2); }
+.falling-hearts i:nth-child(5) { left: 70%; animation-duration: 11s; animation-delay: -4s; transform: scale(1.0); }
+.falling-hearts i:nth-child(6) { left: 85%; animation-duration: 14s; animation-delay: -6s; transform: scale(1.3); }
+.falling-hearts i:nth-child(7) { left: 15%; animation-duration: 12s; animation-delay: -8s; transform: scale(0.85); }
+.falling-hearts i:nth-child(8) { left: 35%; animation-duration: 11s; animation-delay: -2s; transform: scale(1.05); }
+.falling-hearts i:nth-child(9) { left: 5%; animation-duration: 16s; animation-delay: -6s; transform: scale(0.75); }
+.falling-hearts i:nth-child(10) { left: 95%; animation-duration: 10s; animation-delay: -9s; transform: scale(1.15); }
+.falling-hearts i:nth-child(11) { left: 22%; animation-duration: 13s; animation-delay: -1s; transform: scale(0.95); }
+.falling-hearts i:nth-child(12) { left: 48%; animation-duration: 15s; animation-delay: -4s; transform: scale(1.1); }
+.falling-hearts i:nth-child(13) { left: 72%; animation-duration: 10s; animation-delay: -6s; transform: scale(0.8); }
+.falling-hearts i:nth-child(14) { left: 30%; animation-duration: 17s; animation-delay: -8s; transform: scale(1.2); }
+.falling-hearts i:nth-child(15) { left: 60%; animation-duration: 11s; animation-delay: -5s; transform: scale(1.0); }
+.falling-hearts i:nth-child(16) { left: 8%; animation-duration: 14s; animation-delay: -7s; transform: scale(1.3); }
+.falling-hearts i:nth-child(17) { left: 45%; animation-duration: 12s; animation-delay: -9s; transform: scale(0.85); }
+.falling-hearts i:nth-child(18) { left: 78%; animation-duration: 11s; animation-delay: -3s; transform: scale(1.05); }
+.falling-hearts i:nth-child(19) { left: 18%; animation-duration: 16s; animation-delay: -7s; transform: scale(0.75); }
+.falling-hearts i:nth-child(20) { left: 88%; animation-duration: 10s; animation-delay: -10s; transform: scale(1.15); }
 
-/* --- 6. Responsive cho điện thoại --- */
+
+/* --- 6. Responsive & Other Fixes --- */
 @media (max-width: 767.98px) {
-    #home .carousel-item {
-        height: 100vh;
-        min-height: 550px;
+    .hero-content-wrapper-new {
+        padding: 1.5rem;
     }
-    .hero-content-box {
-        padding: 2rem 1.5rem;
-        max-width: 90%;
-    }
-    .hero-names h2 {
+    .hero-title {
         font-size: 3.5rem;
-    }
-    .ampersand {
-        font-size: 2.5rem;
-    }
-    .hero-intro-text {
-        font-size: 0.9rem;
-        letter-spacing: 3px;
     }
     .hero-date {
         font-size: 1rem;
-    }
-    .lunar-date {
-        font-size: 0.8rem;
+        padding-left: 1rem;
     }
     .countdown-number {
-        font-size: 2.2rem;
-    }
-    .countdown-label {
-        font-size: 0.65rem;
+        font-size: 1.8rem;
     }
     #wedding-countdown {
-        gap: 1.2rem;
+        gap: 1.5rem;
     }
-    .btn-play { /* Kích thước nút play trên mobile */
-        width: 40px;
-        height: 40px;
+    /* FIX: Ẩn icon scroll down trên mobile để không che countdown */
+    .scroll-to-bottom {
+        display: none !important;
     }
-    .btn-play:before, .btn-play:after {
-        width: 50px;
-        height: 50px;
-    }
-    .btn-play span {
-        border-left: 12px solid #ffffff;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        left: 15px;
+    .falling-hearts i {
+        width: 20px; /* Kích thước trái tim trên mobile */
+        height: 20px;
     }
 }
-
 
 /* ====================ANIMATION FIRST=============================================== */
 
@@ -11107,4 +11063,165 @@ a.text-dark:focus {
   #about-v2 .script{ font-size: clamp(22px, 6.4vw, 34px); }
   #about-v2 .addr{ max-width: 24ch; }
 }
+@media (max-width:400px){
+  .event-details .event-title, .wc-card__title{ font-size:1.75rem; }
+}
 /* ==================== END About=============================================== */
+
+/* ==================== Thank you=============================================== */
+/* THANK YOU — full-bleed như mẫu */
+.thanks-section{
+  position:relative;
+  min-height:70vh;
+  display:grid;
+  place-items:center;
+  isolation:isolate;
+  /* full width ngay cả khi nằm trong .container */
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+}
+
+.thanks-bg{ position:absolute; inset:0; background:var(--bg) center/cover no-repeat; z-index:-2; }
+/* phủ xanh NHẠT hơn mẫu của bạn trước đó */
+.thanks-bg::after{ content:""; position:absolute; inset:0; background:rgba(15,59,90,.18); z-index:-1; }
+
+.thanks-overlay{ width:100%; display:flex; justify-content:center; }
+
+.thanks-ribbon{
+  width:100vw;                /* chạy hết màn hình */
+  max-width:none;
+  background:rgba(21,56,86,.36); /* nhạt hơn */
+  color:#fff;
+  padding:28px 4vw 22px;
+  border-radius:0;              /* giống mẫu, không bo góc */
+  box-shadow:0 18px 48px rgba(0,0,0,.18);
+  text-align:center;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  opacity:0; transform:translateY(16px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.thanks-section.in .thanks-ribbon{ opacity:1; transform:none; }
+
+.thanks-line{
+  display:flex; align-items:center; justify-content:center;
+  gap:clamp(10px,2vw,22px); margin-bottom:.35rem;
+}
+
+/* họa tiết uốn lượn mảnh & dài hơn */
+.decor{
+  width:clamp(120px,24vw,320px);
+  height:18px;
+  background-repeat:no-repeat; background-size:100% 100%;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 24'%3E%3Cpath d='M2 12 C60 2 120 22 150 12 C180 2 240 22 298 12' stroke='%23ffffff' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  opacity:.95;
+}
+
+/* chữ script giống mẫu */
+.thanks-script{
+  margin:0;
+  color:#fff;
+  font-family:'Allura', cursive;
+  font-weight:400;
+  font-size:clamp(52px,9vw,120px);
+  line-height:1;
+  text-shadow:0 6px 18px rgba(0,0,0,.25);
+  animation:breathe 3.4s ease-in-out infinite;
+  transform-origin:center;
+}
+
+/* dòng phụ */
+.thanks-sub{
+  margin:.25rem 0 0;
+  font-family:'Playfair Display', serif;
+  font-style:italic; font-weight:500;
+  font-size:clamp(16px,2.2vw,28px);
+  letter-spacing:.2px;
+  text-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+
+@keyframes breathe{
+  0%{ transform:scale(.985); }
+  50%{ transform:scale(1.025); }
+  100%{ transform:scale(.985); }
+}
+
+@media (max-width:576px){
+  .thanks-section{ min-height:64vh; }
+  .thanks-ribbon{ padding:22px 16px 18px; }
+  .decor{ width:28vw; height:14px; }
+}
+
+/* ==================== END Thank you=============================================== */
+
+:root{
+  /* Dùng chung để căn hàng với nút back-to-top */
+  --fab-bottom: 24px;
+  --fab-left: 20px;
+  --fab-right: 20px;
+  --fab-size: 48px;
+}
+
+/* Căn lại back-to-top cho trùng cao độ với nút nhạc */
+.back-to-top{
+  bottom: var(--fab-bottom) !important;
+  right: var(--fab-right) !important;
+  width: var(--fab-size);
+  height: var(--fab-size);
+}
+
+/* Nút nhạc */
+.music-toggle{
+  position: fixed;
+  left: var(--fab-left);
+  bottom: var(--fab-bottom);
+  width: var(--fab-size);
+  height: var(--fab-size);
+  display: grid;
+  place-items: center;
+  border: none;          /* bỏ viền cam */
+  outline: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,.6);     /* hơi mờ để không che nội dung */
+  backdrop-filter: blur(4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  opacity: .8;
+  z-index: 1002;
+  cursor: pointer;
+  transition: opacity .2s ease, transform .15s ease;
+}
+.music-toggle:hover,
+.music-toggle:focus{ opacity: 1; }
+
+.music-toggle img{
+  width: 26px; height: 26px;
+  pointer-events: none; user-select: none;
+}
+
+/* Đang phát -> xoay icon (không cần vòng sáng cam) */
+.music-toggle.playing img{
+  animation: spin 6s linear infinite;
+}
+
+/* Đang tắt -> vẽ đường chéo mảnh */
+.music-toggle.muted::after{
+  content: "";
+  position: absolute; inset: 0;
+  margin: auto;
+  width: 36px; height: 2px;
+  background: rgba(0,0,0,.55);
+  transform: rotate(-30deg);
+  border-radius: 2px;
+}
+
+/* Bỏ mọi vòng tròn/hào quang cũ nếu có */
+.music-toggle::before{ content:none !important; }
+
+@keyframes spin{ to{ transform: rotate(360deg); } }
+
+/* Nếu người dùng chọn giảm chuyển động */
+@media (prefers-reduced-motion: reduce){
+  .music-toggle.playing img{ animation: none; }
+}
+
