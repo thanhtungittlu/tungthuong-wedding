@@ -10459,95 +10459,109 @@ a.text-dark:focus {
   margin-top: 1rem;
 }
 
-.event-item {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-bottom: 2.5rem;
+/* Event */
+/* ====== EVENT CARDS — 5 (3–2) 1 ====== */
+.wc-eventsGrid{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0,1fr)); /* desktop: 5 cột */
+  gap:24px;
 }
 
-.event-item:last-child {
-  margin-bottom: 0;
+/* ≤1200px: 3 cột */
+@media (max-width:1199.98px){
+  .wc-eventsGrid{ grid-template-columns:repeat(3, minmax(0,1fr)); }
+}
+/* ≤992px: 2 cột */
+@media (max-width:991.98px){
+  .wc-eventsGrid{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+}
+/* ≤576px: 1 cột */
+@media (max-width:575.98px){
+  .wc-eventsGrid{ grid-template-columns:1fr; }
 }
 
-.event-item::before {
-  content: '';
-  position: absolute;
-  left: -2rem;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 3px solid #ff8fb0;
-  z-index: 1;
+/* Card */
+.wc-card{
+  background:#fff;
+  border:1px solid rgba(15,59,90,.08);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 14px 34px rgba(15,59,90,.08);
+  display:flex; flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
-
-.event-time {
-  background-color: #0F3B5A;
-  color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  text-align: center;
-  min-width: 90px;
-  margin-right: 1.5rem;
-}
-
-.event-time .day {
-  display: block;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  opacity: 0.8;
-  letter-spacing: 1px;
-}
-
-.event-time .date {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.event-details .event-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: #0F3B5A;
-  margin-bottom: 0.25rem;
-  font-weight: normal;
-}
-
-.event-details .event-meta {
-  color: #6c757d;
-  margin-bottom: 0;
-  font-size: 1rem;
-}
-
-@media (max-width: 576px) {
-  .event-schedule {
-    padding-left: 1.5rem;
-  }
-
-  .event-item::before {
-    left: -1.5rem;
-  }
-
-  .event-time {
-    min-width: 80px;
-    padding: 0.5rem;
-    margin-right: 1rem;
-  }
-
-  .event-time .date {
-    font-size: 1.2rem;
-  }
-
-  .event-details .event-title {
-    font-size: 2rem;
+@media (hover:hover){
+  .wc-card:hover{
+    transform: translateY(-4px);
+    box-shadow:0 20px 42px rgba(15,59,90,.12);
   }
 }
 
+.wc-card__img{ width:100%; background:#f6f8fb; }
+.wc-card__img img{
+  width:100%; height:100%;
+  object-fit:cover; display:block;
+  aspect-ratio: 4 / 3;                 /* giữ tỉ lệ ảnh đồng đều */
+}
+
+.wc-card__body{
+  padding:16px;
+  display:flex; flex-direction:column; gap:10px;
+  flex:1;                             /* đẩy nhóm nút xuống đáy */
+}
+
+.wc-card__title{
+  font-family:'Great Vibes', cursive;
+  font-weight:400;
+  font-size:clamp(22px, 2.2vw, 28px);
+  color:#0F3B5A;
+  text-align:center;
+  margin:2px 0 6px;
+}
+
+.wc-meta{
+  font-size:14px; color:#6c757d;
+  text-align:center; line-height:1.55;
+}
+.wc-meta__row{ white-space:normal; }
+.wc-meta__row i{ margin-right:8px; color:#0F3B5A; }
+
+/* Buttons */
+.wc-actions{
+  margin-top:auto;
+  display:flex; gap:10px; justify-content:space-between;
+}
+.wc-btn{
+  flex:1; border-radius:999px;
+  font-weight:600;
+  padding:.55rem .75rem;
+  font-size:.95rem;
+}
+.wc-btn i{ margin-right:6px; }
+
+/* Widen only the Event section on desktop */
+@media (min-width:1200px){
+  #event .container{ max-width: 1600px; }   /* hoặc 1500/1600 tùy bạn */
+}
+@media (min-width:1600px){
+  #event .container{ max-width: 1600px; }
+}
+
+/* Card columns: đừng để quá “ốm” */
+@media (min-width:1200px){
+  .wc-eventsGrid{
+    grid-template-columns: repeat(5, minmax(260px,1fr)); /* ≥1200px: 5 cột, mỗi cột ≥260px */
+  }
+}
+
+
+/* Mobile fine-tune */
+@media (max-width:575.98px){
+  .wc-card__body{ padding:14px; gap:8px; }
+  .wc-btn{ padding:.5rem .65rem; font-size:.9rem; }
+}
+
+/* Event */
 
 /* Timeline base */
 .timeline {
@@ -10713,17 +10727,17 @@ a.text-dark:focus {
 
 /* =================================================================== */
 /* === KHỐI CSS HOÀN CHỈNH CHO BANNER & COUNTDOWN (BẢN CUỐI CÙNG) === */
-/* =================================================================== */
 
-/* --- 1. Carousel Banner Styling --- */
+/* --- 1. Carousel & Background --- */
 #home .carousel-item {
     height: 100vh;
-    min-height: 600px;
+    min-height: 700px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
+/* Lớp phủ tối nhẹ hơn, giúp chữ nổi bật */
 #home .carousel-item::after {
     content: '';
     position: absolute;
@@ -10731,50 +10745,228 @@ a.text-dark:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Lớp phủ tối mờ */
+    background-color: rgba(0, 0, 0, 0.1); /* Giảm độ tối của lớp phủ */
+    z-index: 1; /* Nằm trên ảnh, dưới nội dung */
 }
-#home .carousel-caption {
-    z-index: 1;
-}
-#home .display-1 {
-    line-height: 1; /* Giảm khoảng cách giữa 2 dòng tên */
-    position: relative;
-    padding: 0 1rem;
-}
-/* Thêm ký tự '&' vào giữa 2 dòng tên một cách tinh tế */
-#home .display-1::before {
-    content: '&';
-    font-family: 'Great Vibes', cursive;
+
+/* --- 2. Main Content Wrapper --- */
+.hero-content-wrapper {
     position: absolute;
-    top: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    padding: 1rem;
+    z-index: 2; /* Đảm bảo nội dung luôn nằm trên cùng */
+}
+
+.hero-content-box {
+    width: 100%;
+    max-width: 650px;
+    padding: 2.5rem 2rem;
+    
+    /* FIX: Giảm độ mờ và làm nền sáng hơn */
+    background: rgba(255, 255, 255, 0.1); /* Nền trắng trong suốt nhẹ */
+    backdrop-filter: blur(2px); /* Giảm độ mờ */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* --- 3. Typography & Text Styling --- */
+.hero-intro-text {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 1.8rem;
+    color: #fff; /* Chữ trắng rõ nét */
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4); /* Thêm đổ bóng nhẹ cho chữ */
+}
+.hero-names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.hero-names h2 {
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0;
+    color: #fff; /* Chữ trắng */
+    text-shadow: 0 3px 15px rgba(0,0,0,0.5); /* Đổ bóng mạnh hơn để nổi bật */
+}
+.ampersand {
+    font-size: 3rem;
+    color: #E47A2E; /* Màu cam nổi bật cho dấu '&' */
+    margin: 0.5rem 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+.hero-date {
+    margin: 2rem 0;
+    font-weight: 500;
+    color: #fff; /* Chữ trắng */
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+.hero-date p { margin: 0; }
+.lunar-date {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+/* --- 4. Countdown Styling --- */
+#wedding-countdown {
+    gap: 1.8rem;
+    margin-top: 2.5rem;
+}
+.countdown-item {
+    background: transparent;
+    padding: 0;
+    min-width: auto;
+    box-shadow: none;
+}
+.countdown-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.countdown-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 5px;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* --- 5. Nút Play Video (Khôi phục animation template gốc) --- */
+.btn-play {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    outline: none !important;
+    background: #E47A2E; /* Màu nền của nút */
+    cursor: pointer;
+}
+
+.btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
     left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
-    opacity: 0.7;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #E47A2E;
+    border-radius: 50%;
+    animation: pulse-border 1500ms ease-out infinite;
 }
 
-
-/* --- 3. Body Padding & Mobile Responsive --- */
-body {
-    padding-bottom: 80px; /* Khoảng đệm cho banner */
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #E47A2E;
+    border-radius: 50%;
+    transition: all 200ms ease;
 }
+
+.btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-left: 15px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    left: 17px;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* --- 6. Responsive cho điện thoại --- */
 @media (max-width: 767.98px) {
     #home .carousel-item {
-        height: 90vh;
-        min-height: 500px;
+        height: 100vh;
+        min-height: 550px;
     }
-    #home .display-1 {
-        font-size: 3.5rem; /* Điều chỉnh lại kích thước cho 2 dòng */
+    .hero-content-box {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
     }
-    #home .display-1::before {
-        font-size: 1.8rem;
+    .hero-names h2 {
+        font-size: 3.5rem;
     }
-    body {
-        padding-bottom: 70px;
+    .ampersand {
+        font-size: 2.5rem;
+    }
+    .hero-intro-text {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+    }
+    .hero-date {
+        font-size: 1rem;
+    }
+    .lunar-date {
+        font-size: 0.8rem;
+    }
+    .countdown-number {
+        font-size: 2.2rem;
+    }
+    .countdown-label {
+        font-size: 0.65rem;
+    }
+    #wedding-countdown {
+        gap: 1.2rem;
+    }
+    .btn-play { /* Kích thước nút play trên mobile */
+        width: 40px;
+        height: 40px;
+    }
+    .btn-play:before, .btn-play:after {
+        width: 50px;
+        height: 50px;
+    }
+    .btn-play span {
+        border-left: 12px solid #ffffff;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        left: 15px;
     }
 }
-
-
 
 
 /* ====================ANIMATION FIRST=============================================== */
@@ -10818,3 +11010,101 @@ body {
     transform: translateY(100%);
 }
  
+
+/* ==================== About=============================================== */
+/* ===== About v2 – Fit 1 screen on both desktop & mobile (2×2 zig-zag) ===== */
+/* Tùy chỉnh nhanh */
+#about-v2{
+  --navy:#163a5a;
+  --soft:#e8eef7;
+  --panel:#fbfdff;
+  --gap:12px;            /* khoảng cách giữa các ô */
+  --pad:20px;            /* padding trong ô chữ */
+  --title-gap:10px;      /* khoảng cách dưới tiêu đề */
+  max-width: min(980px, 94vw);   /* bố cục nhỏ lại trên desktop */
+  margin-inline: auto;
+  display:flex;
+  flex-direction:column;
+  height: 100dvh;        /* chiếm vừa 1 màn hình (dùng dvh cho mobile) */
+  padding: max(8px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-left)) 
+           max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-right));
+}
+
+#about-v2 .section-title{
+  margin-bottom: var(--title-gap);
+}
+#about-v2 .section-title h1{ font-size: clamp(28px, 4.2vw, 38px); }
+#about-v2 .section-title h6{ margin-bottom: 4px; }
+
+/* Lưới 2×2 luôn luôn (kể cả mobile) và full chiều cao còn lại */
+#about-v2 .about-grid{
+  flex:1;                          /* chiếm toàn bộ phần còn lại dưới tiêu đề */
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr); /* đúng 2 hàng bằng nhau */
+  gap: var(--gap);
+  min-height: 0;                   /* tránh tràn */
+}
+
+/* Card chung */
+#about-v2 .card{
+  background:var(--panel);
+  border:3px solid var(--soft);
+  border-radius:12px;
+  box-shadow:0 10px 26px rgba(15,59,90,.08);
+  overflow:hidden;
+  height:100%;                     /* luôn cao bằng ô lưới */
+}
+
+/* Ảnh fill ô */
+#about-v2 .card.photo img{
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+  display:block;
+}
+
+/* Ô thông tin */
+#about-v2 .card.info{
+  color:var(--navy);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;          /* căn giữa theo cả hai chiều */
+  padding: var(--pad);
+  gap: 6px;
+}
+
+/* Chữ trong ô thông tin */
+#about-v2 .sup{
+  font-weight:800; letter-spacing:.16em; font-size: clamp(.78rem, 1.8vw, .95rem);
+}
+#about-v2 .parents{
+  font-weight:800; text-transform:uppercase; line-height:1.35;
+  font-size: clamp(.80rem, 1.9vw, .98rem);
+  margin-top: 2px;
+}
+#about-v2 .addr{
+  line-height:1.55;
+  font-size: clamp(.82rem, 1.9vw, .98rem);
+  max-width: 28ch;                 /* thu hẹp độ rộng dòng cho gọn mắt */
+  margin: 2px auto 4px;
+}
+#about-v2 .role{
+  font-weight:700; letter-spacing:.08em; opacity:.8;
+  font-size: clamp(.78rem, 1.7vw, .92rem);
+}
+#about-v2 .script{
+  font-family:"Great Vibes", cursive;
+  font-size: clamp(26px, 5.4vw, 44px); /* auto scale theo màn hình */
+  line-height:1;
+}
+
+/* Mobile tối ưu – vẫn 2×2 zig-zag nhưng thu nhỏ khoảng cách/padding để fit */
+@media (max-width: 575.98px){
+  #about-v2{ --gap:8px; --pad:12px; --title-gap:6px; max-width: 100vw; }
+  #about-v2 .section-title h1{ font-size: clamp(24px, 5.5vw, 32px); }
+  #about-v2 .script{ font-size: clamp(22px, 6.4vw, 34px); }
+  #about-v2 .addr{ max-width: 24ch; }
+}
+/* ==================== END About=============================================== */

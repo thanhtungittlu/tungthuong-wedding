@@ -43,43 +43,58 @@
 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0" id="home">
-    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+<div class="container-fluid p-0" id="home">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
         <div class="carousel-inner">
             <div class="carousel-item active" 
                  style="background-image: url('https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto/album9.jpg');">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 900px;">
-                        <h1 class="display-1 font-secondary text-white">Thanh Tùng<br>Hoài Thương</h1>
-                        <div class="d-inline-block border-top border-bottom border-light py-3 px-4 mt-4">
-                            <h3 class="text-uppercase font-weight-normal text-white m-0"
-                                style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
-                        </div>
-                        <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/IOe0tNoUGv8" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
             </div>
             <div class="carousel-item" 
                  style="background-image: url('https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto/album23.jpg');">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 900px;">
-                        <h1 class="display-1 font-secondary text-white">Thanh Tùng<br>Hoài Thương</h1>
-                        <div class="d-inline-block border-top border-bottom border-light py-3 px-4 mt-4">
-                            <h3 class="text-uppercase font-weight-normal text-white m-0"
-                                style="letter-spacing: 2px;">Chúng mình kết hôn</h3>
-                        </div>
-                        <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/IOe0tNoUGv8" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
 
+        <div class="hero-content-wrapper">
+            <div class="hero-content-box text-center">
+                <p class="hero-intro-text">Save the Date</p>
+                
+                <div class="hero-names">
+                    <h2 class="font-secondary">Thanh Tùng</h2>
+                    <span class="ampersand font-secondary">&</span>
+                    <h2 class="font-secondary">Hoài Thương</h2>
+                </div>
+                
+                <div class="hero-date">
+                    <p>29 & 30 Tháng Mười Một, 2025</p>
+                    <p class="lunar-date">(Nhằm ngày 09 & 10 tháng 10 Âm lịch)</p>
+                </div>
+                
+                <div id="wedding-countdown" class="d-flex justify-content-center">
+                    <div class="countdown-item">
+                        <span id="days" class="countdown-number">00</span>
+                        <span class="countdown-label">Ngày</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours" class="countdown-number">00</span>
+                        <span class="countdown-label">Giờ</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes" class="countdown-number">00</span>
+                        <span class="countdown-label">Phút</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds" class="countdown-number">00</span>
+                        <span class="countdown-label">Giây</span>
+                    </div>
+                </div>
+
+                <button type="button" class="btn-play mx-auto" data-toggle="modal"
+                    data-src="https://www.youtube.com/embed/IOe0tNoUGv8" data-target="#videoModal">
+                    <span></span>
+                </button>
+
+            </div>
+        </div>
     </div>
 </div>
    
@@ -107,59 +122,43 @@
     
 
     <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Giới thiệu</h6>
-                <h1 class="font-secondary display-4">Chú rể  &  Cô dâu</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row m-0 mb-4 mb-md-0 pb-2 pb-md-0">
-                <div class="col-md-6 p-0 order-md-2" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100"
-                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/anh.jpg"
-                        style="object-fit: cover;">
-                </div>
-                <div class="col-md-6 p-0 text-center text-md-right order-md-1">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3 font-secondary" style="font-size: 2.5rem;"><i class="fa fa-male text-primary pr-3"></i>Thanh Tùng</h3>
-                        <p class="mb-4">Là một chàng trai ấm áp và chân thành, Tùng luôn là điểm tựa vững chắc cho những người anh yêu thương. Từ ngày gặp Thương, cuộc sống của anh thêm rực rỡ và tràn ngập tiếng cười. Anh mong chờ mỗi ngày sắp tới để cùng cô ấy xây dựng một tổ ấm hạnh phúc.</p>
-                        <div class="position-relative">
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-0">
-                <div class="col-md-6 p-0" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100"
-                        src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_400,h_400/em.jpg"
-                        style="object-fit: cover;">
-                </div>
-                <div class="col-md-6 p-0 text-center text-md-left">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3 font-secondary" style="font-size: 2.5rem;"><i class="fa fa-female text-primary pr-3"></i>Hoài Thương</h3>
-                        <p class="mb-4">Mang trong mình nụ cười tỏa nắng và một trái tim nhân hậu, Thương là người con gái dịu dàng đã thắp sáng cuộc đời Tùng. Cô ấy yêu những điều bình dị và luôn biết cách vun đắp cho tình yêu của cả hai. Đối với Thương, được cùng Tùng đi hết quãng đời còn lại là niềm hạnh phúc lớn lao nhất.</p>
-                        <div class="position-relative">
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- About v2 (2x2 card grid) -->
+<div id="about-v2" class="container py-5">
+  <div class="section-title position-relative text-center mb-4">
+    <h6 class="text-uppercase text-primary mb-2" style="letter-spacing:3px;">Giới thiệu</h6>
+    <i class="far fa-heart text-dark"></i>
+  </div>
+
+  <div class="about-grid">
+    <!-- 1. Ảnh chú rể -->
+    <div class="card photo">
+      <img src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_900,h_1200/anh.jpg" alt="Chú rể">
     </div>
+
+    <!-- 2. Thông tin nhà trai -->
+    <div class="card info">
+      <div class="sup">NHÀ TRAI</div>
+      <div class="parents">ÔNG Lê Văn Sơn<br>BÀ Trần Thị thanh Thuỳ</div>
+      <p class="addr">Xóm 7, Xã Đông Hiếu, Tỉnh Nghệ An</p>
+      <div class="role">Chú Rể</div>
+      <h2 class="script">Thanh Tùng</h2>
+    </div>
+
+    <!-- 3. Thông tin nhà gái -->
+    <div class="card info">
+      <div class="sup">NHÀ GÁI</div>
+      <div class="parents">ÔNG Đinh Bá Lương<br>BÀ Nguyễn thị Dương</div>
+      <p class="addr">Xóm 7, Xã Đông Hiếu, Tỉnh Nghệ An</p>
+      <div class="role">Cô Dâu</div>
+      <h2 class="script">Hoài Thương</h2>
+    </div>
+
+    <!-- 4. Ảnh cô dâu -->
+    <div class="card photo">
+      <img src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,w_900,h_1200/em.jpg" alt="Cô dâu">
+    </div>
+  </div>
+</div>
     <!-- About End -->
 
 <!-- Story Start -->
@@ -335,79 +334,134 @@
 
 
     <!-- Event Start -->
+<!-- Event Start -->
 <div class="container-fluid py-5" id="event">
-    <div class="container py-5">
-        <div class="section-title position-relative text-center">
-            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Sự kiện</h6>
-            <h1 class="font-secondary display-4">Lịch cưới của chúng mình</h1>
-            <i class="far fa-heart text-dark"></i>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-10 text-center">
-                <h5 class="font-weight-normal text-muted mb-5">
-                    Chúng mình trân trọng kính mời gia đình và bạn bè đến chung vui trong những sự kiện quan trọng của hành trình tình yêu này. Sự hiện diện của bạn là niềm vinh hạnh lớn lao cho gia đình chúng mình.
-                </h5>
-            </div>
-        </div>
+  <div class="container py-5">
 
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="event-schedule">
-                    <div class="event-item">
-                        <div class="event-time">
-                            <span class="day">Thứ Bảy</span>
-                            <span class="date">29.11</span>
-                        </div>
-                        <div class="event-details">
-                            <h4 class="event-title">Lễ Đám Hỏi & Nạp Tài</h4>
-                            <p class="event-meta">09:00 | Tại tư gia nhà gái</p>
-                        </div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-time">
-                            <span class="day">Thứ Bảy</span>
-                            <span class="date">29.11</span>
-                        </div>
-                        <div class="event-details">
-                            <h4 class="event-title">Tiệc Cưới Nhà Gái</h4>
-                            <p class="event-meta">11:30 | Chung vui cùng gia đình, quan khách</p>
-                        </div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-time">
-                            <span class="day">Thứ Bảy</span>
-                            <span class="date">29.11</span>
-                        </div>
-                        <div class="event-details">
-                            <h4 class="event-title">Chung Vui Cùng Bạn Bè</h4>
-                            <p class="event-meta">15:00 | Mời bà con, láng giềng & bạn bè thân thiết</p>
-                        </div>
-                    </div>
-                     <div class="event-item">
-                        <div class="event-time">
-                            <span class="day">Chủ Nhật</span>
-                            <span class="date">30.11</span>
-                        </div>
-                        <div class="event-details">
-                            <h4 class="event-title">Lễ Rước Dâu & Gia Tiên</h4>
-                            <p class="event-meta">09:00 | Tại tư gia nhà trai</p>
-                        </div>
-                    </div>
-                     <div class="event-item">
-                        <div class="event-time">
-                            <span class="day">Chủ Nhật</span>
-                            <span class="date">30.11</span>
-                        </div>
-                        <div class="event-details">
-                            <h4 class="event-title">Tiệc Cưới Nhà Trai</h4>
-                            <p class="event-meta">11:30 | Chung vui cùng gia đình, quan khách</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Heading & intro (giữ như cũ) -->
+    <div class="section-title position-relative text-center">
+      <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Sự kiện</h6>
+      <h1 class="font-secondary display-4">Lịch cưới của chúng mình</h1>
+      <i class="far fa-heart text-dark"></i>
     </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 text-center">
+        <h5 class="font-weight-normal text-muted mb-5">
+          Chúng mình trân trọng kính mời gia đình và bạn bè đến chung vui trong những sự kiện quan trọng của hành trình tình yêu này.
+          Sự hiện diện của bạn là niềm vinh hạnh lớn lao cho gia đình chúng mình.
+        </h5>
+      </div>
+    </div>
+
+    <!-- Cards grid 5 → 3 → 2 → 1 -->
+    <div class="wc-eventsGrid">
+
+      <!-- 1. Đám hỏi & nạp tài -->
+      <article class="wc-card">
+        <figure class="wc-card__img">
+          <img src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,g_auto,w_640,h_420/album23.jpg"
+               alt="Lễ Đám Hỏi & Nạp Tài">
+        </figure>
+        <div class="wc-card__body">
+          <h3 class="wc-card__title">Lễ Đám Hỏi &amp; Nạp Tài</h3>
+          <div class="wc-meta">
+            <div class="wc-meta__row"><i class="far fa-clock"></i> 09:00 &nbsp;29/11/2025</div>
+            <div class="wc-meta__row"><i class="fas fa-map-marker-alt"></i> Tại tư gia nhà gái</div>
+          </div>
+          <div class="wc-actions">
+            <a class="btn btn-light wc-btn" href="#"><i class="far fa-calendar-plus"></i> Thêm vào lịch</a>
+            <a class="btn btn-primary wc-btn" target="_blank"
+               href="https://maps.google.com/?q=Tại tư gia nhà gái"><i class="fas fa-map-marked-alt"></i> Xem bản đồ</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Tiệc cưới nhà gái -->
+      <article class="wc-card">
+        <figure class="wc-card__img">
+          <img src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,g_auto,w_640,h_420/album9.jpg"
+               alt="Tiệc Cưới Nhà Gái">
+        </figure>
+        <div class="wc-card__body">
+          <h3 class="wc-card__title">Tiệc Cưới Nhà Gái</h3>
+          <div class="wc-meta">
+            <div class="wc-meta__row"><i class="far fa-clock"></i> 11:30 &nbsp;29/11/2025</div>
+            <div class="wc-meta__row"><i class="fas fa-users"></i> Chung vui cùng gia đình, quan khách</div>
+          </div>
+          <div class="wc-actions">
+            <a class="btn btn-light wc-btn" href="#"><i class="far fa-calendar-plus"></i> Thêm vào lịch</a>
+            <a class="btn btn-primary wc-btn" target="_blank"
+               href="https://maps.google.com/?q=Tiệc cưới nhà gái"><i class="fas fa-map-marked-alt"></i> Xem bản đồ</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Bạn bè -->
+      <article class="wc-card">
+        <figure class="wc-card__img">
+          <img src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,g_auto,w_640,h_420/album14.jpg"
+               alt="Chung Vui Cùng Bạn Bè">
+        </figure>
+        <div class="wc-card__body">
+          <h3 class="wc-card__title">Chung Vui Cùng Bạn Bè</h3>
+          <div class="wc-meta">
+            <div class="wc-meta__row"><i class="far fa-clock"></i> 15:00 &nbsp;29/11/2025</div>
+            <div class="wc-meta__row"><i class="fas fa-hand-holding-heart"></i> Mời bà con, láng giềng &amp; bạn bè thân thiết</div>
+          </div>
+          <div class="wc-actions">
+            <a class="btn btn-light wc-btn" href="#"><i class="far fa-calendar-plus"></i> Thêm vào lịch</a>
+            <a class="btn btn-primary wc-btn" target="_blank"
+               href="https://maps.google.com/?q=Sự kiện bạn bè"><i class="fas fa-map-marked-alt"></i> Xem bản đồ</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Rước dâu & gia tiên -->
+      <article class="wc-card">
+        <figure class="wc-card__img">
+          <img src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,g_auto,w_640,h_420/album21.jpg"
+               alt="Lễ Rước Dâu & Gia Tiên">
+        </figure>
+        <div class="wc-card__body">
+          <h3 class="wc-card__title">Lễ Rước Dâu &amp; Gia Tiên</h3>
+          <div class="wc-meta">
+            <div class="wc-meta__row"><i class="far fa-clock"></i> 09:00 &nbsp;30/11/2025</div>
+            <div class="wc-meta__row"><i class="fas fa-map-marker-alt"></i> Tại tư gia nhà trai</div>
+          </div>
+          <div class="wc-actions">
+            <a class="btn btn-light wc-btn" href="#"><i class="far fa-calendar-plus"></i> Thêm vào lịch</a>
+            <a class="btn btn-primary wc-btn" target="_blank"
+               href="https://maps.google.com/?q=Nhà trai"><i class="fas fa-map-marked-alt"></i> Xem bản đồ</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Tiệc cưới nhà trai -->
+      <article class="wc-card">
+        <figure class="wc-card__img">
+          <img src="https://res.cloudinary.com/dcvoqxypw/image/upload/f_auto,q_auto,c_fill,g_auto,w_640,h_420/album10.jpg"
+               alt="Tiệc Cưới Nhà Trai">
+        </figure>
+        <div class="wc-card__body">
+          <h3 class="wc-card__title">Tiệc Cưới Nhà Trai</h3>
+          <div class="wc-meta">
+            <div class="wc-meta__row"><i class="far fa-clock"></i> 11:30 &nbsp;30/11/2025</div>
+            <div class="wc-meta__row"><i class="fas fa-users"></i> Chung vui cùng gia đình, quan khách</div>
+          </div>
+          <div class="wc-actions">
+            <a class="btn btn-light wc-btn" href="#"><i class="far fa-calendar-plus"></i> Thêm vào lịch</a>
+            <a class="btn btn-primary wc-btn" target="_blank"
+               href="https://maps.google.com/?q=Tiệc cưới nhà trai"><i class="fas fa-map-marked-alt"></i> Xem bản đồ</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
 </div>
+<!-- Event End -->
+
     <!-- Event End -->
 
 
