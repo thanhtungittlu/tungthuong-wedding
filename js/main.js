@@ -69,17 +69,6 @@
 
 
 
-
-    // Scroll to Bottom
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('.scroll-to-bottom').fadeOut('slow');
-        } else {
-            $('.scroll-to-bottom').fadeIn('slow');
-        }
-    });
-
-
     // Portfolio isotope and filter
     var portfolioIsotope = $('.portfolio-container').isotope({
         itemSelector: '.portfolio-item',
@@ -93,14 +82,22 @@
     });
 
 
-    // Back to top button
+    // // Back to top button
+    $('.back-to-top').addClass('is-hidden');
+
+    // Xử lý logic ẩn/hiện bằng class khi cuộn trang
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
-            $('.back-to-top').fadeIn('slow');
+            // --- KHI NGƯỜI DÙNG CUỘN XUỐNG ---
+            $('.back-to-top').removeClass('is-hidden'); // Xóa class để HIỆN nút LÊN
+            $('.scroll-down-button').addClass('is-hidden');    // Thêm class để ẨN nút XUỐNG
         } else {
-            $('.back-to-top').fadeOut('slow');
+            // --- KHI NGƯỜI DÙNG Ở ĐẦU TRANG ---
+            $('.back-to-top').addClass('is-hidden');       // Thêm class để ẨN nút LÊN
+            $('.scroll-down-button').removeClass('is-hidden'); // Xóa class để HIỆN nút XUỐNG
         }
     });
+
     $('.back-to-top').click(function () {
         $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
@@ -202,3 +199,17 @@
     }, { threshold: .35 });
     io.observe(el);
 })();
+
+
+    $(function () {
+  var $win = $(window);
+  var $musicToggle = $('#music-toggle');
+
+  $win.on('scroll', function () {
+    if ($win.scrollTop() > 200) {
+      $musicToggle.css('opacity', '1').removeClass('hidden');
+    } else {
+      $musicToggle.css('opacity', '0').addClass('hidden');
+    }
+  });
+});

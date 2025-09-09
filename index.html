@@ -66,7 +66,11 @@
         <div class="hero-content-wrapper-new">
             <p class="hero-intro-text">Save the Date</p>
             
-            <h1 class="font-secondary hero-title">Thanh Tùng & Hoài Thương</h1>
+            <h1 class="font-secondary hero-title">
+              <span class="name">Thanh Tùng</span>
+              <span class="ampersand">&</span>
+              <span class="name">Hoài Thương</span>
+          </h1>
             
             <div class="hero-date">
                 <p>29 & 30 Tháng Mười Một, 2025</p>
@@ -119,7 +123,7 @@
 
     <!-- About Start -->
 <!-- About v2 (2x2 card grid) -->
-<div id="about-v2" class="container py-5">
+<div class="container-fluid py-5" id="about-v2">
   <div class="section-title position-relative text-center mb-4">
     <h6 class="text-uppercase text-primary mb-2" style="letter-spacing:3px;">Giới thiệu</h6>
     <i class="far fa-heart text-dark"></i>
@@ -160,8 +164,6 @@
  
 <!-- Event Start -->
 <div class="container-fluid py-5" id="event">
-  <div class="container py-5">
-
     <!-- Heading & intro (giữ như cũ) -->
     <div class="section-title position-relative text-center">
       <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Sự kiện</h6>
@@ -280,7 +282,6 @@
       </article>
 
     </div>
-  </div>
 </div>
 <!-- Event End -->
 
@@ -530,24 +531,30 @@
     </div>
   </div>
 </section>
-<!-- Thank You End -->
 
 <!-- Thank You End -->
 
     <!-- Footer End -->
 
 
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i
             class="fa fa-angle-double-up"></i></a>
+    
+    <a href="#about-v2" class="btn btn-lg btn-outline-primary btn-lg-square scroll-down-button">
+      <i class="fa fa-angle-double-down"></i>
+  </a>
 
     <!-- Music FAB -->
 <!-- Music toggle -->
-<button id="music-toggle" class="music-toggle" aria-label="Toggle background music">
-  <img src="https://res.cloudinary.com/dcvoqxypw/image/upload/v1757254814/notnhac.jpg" alt="music" />
+<button id="music-toggle" class="music-toggle hidden-music" aria-label="Toggle background music">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 64 64">
+    <rect x="10" y="10" width="40" height="10" fill="#e74c3c" stroke="#611616" stroke-width="3"/>
+    <line x1="10" y1="20" x2="10" y2="44" stroke="#611616" stroke-width="3"/>
+    <line x1="50" y1="20" x2="50" y2="44" stroke="#611616" stroke-width="3"/>
+    <circle cx="10" cy="50" r="8" fill="#e74c3c" stroke="#611616" stroke-width="3"/>
+    <circle cx="50" cy="50" r="8" fill="#e74c3c" stroke="#611616" stroke-width="3"/>
+  </svg>
 </button>
 
 
